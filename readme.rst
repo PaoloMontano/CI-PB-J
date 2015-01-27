@@ -1,10 +1,11 @@
+####################
 COMP 4711 Assignment
+####################
 
-Set 4R
+=== ==============
+Set Contributors
+=== ==============
+4R  Chee, Justin
+4R  Dorsay, Brycen
+4R  Montano, Paolo
 
-==============
-Contributors
-==============
-Chee, Justin
-Dorsay, Brycen
-Montano, Paolo
