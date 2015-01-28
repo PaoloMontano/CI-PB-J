@@ -23,7 +23,7 @@
 
         <!-- Footer -->
         <div class="row">
-            {footer}
+<!--            {footer}-->
         </div>
 
     </div>
