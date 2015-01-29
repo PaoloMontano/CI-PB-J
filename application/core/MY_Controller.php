@@ -33,14 +33,17 @@ class Application extends CI_Controller {
     function render() {
 
         $header_items = array(
-            'menudata' => array(
-                array('name' => 'First', 'link' => '/first'),
-                array('name' => 'Last', 'link' => '/last'),
+            'headerdata' => array(
+                array('name' => 'Home', 'link' => '/'),
+                array('name' => 'Eat', 'link' => '/eat'),
+                array('name' => 'Play', 'link' => '/play'),
+                array('name' => 'Sleep', 'link' => '/sleep')
             )
         );
 
         $this->data['header'] = $this->parser->parse('_header', $header_items, true);
         $this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
+        $this->data['footer'] = $this->parser->parse('_footer', $header_items, true);
 
         // finally, build the browser page!
         $this->data['data'] = &$this->data;

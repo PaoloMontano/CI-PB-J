@@ -1,0 +1,35 @@
+#content {
+    background: #ff9fb4;
+}
+
+#content img {
+    width: 250px;
+}
+
+.container {
+    max-width: 960px
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.container .text-muted {
+    margin: 20px 0;
+}

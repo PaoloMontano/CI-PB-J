@@ -5,27 +5,28 @@
     <title>{title}</title>
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="/assets/css/reset.css" rel="stylesheet" media="screen"/>
+    <link href="/assets/css/normalize.css" rel="stylesheet" media="screen"/>
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <link href="/assets/vendor/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="row">
-            {header}
-        </div>
 
-        <!-- Content -->
+    <!-- Header -->
+    <div class="row">
+        {header}
+    </div>
+
+    <!-- Content -->
+    <div class="container" id="content">
         <div class="row">
             {content}
         </div>
+    </div>
 
-        <!-- Footer -->
-        <div class="row">
-<!--            {footer}-->
-        </div>
-
+    <!-- Footer -->
+    <div class="row">
+        {footer}
     </div>
 
     <script type="javascript" src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
