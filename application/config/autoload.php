@@ -178,6 +178,3 @@ $autoload['model'] = array();
 
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */
-
-$autoload['helper'] = array('common', 'url');
-$autoload['libraries'] = array('database', 'parser');
