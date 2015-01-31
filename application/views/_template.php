@@ -18,11 +18,7 @@
     </div>
 
     <!-- Content -->
-    <div class="container" id="content">
-        <div class="row">
-            {content}
-        </div>
-    </div>
+    {content}
 
     <!-- Footer -->
     <div class="row">

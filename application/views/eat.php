@@ -1,20 +1,27 @@
 <div id="searchnav">
-    <div id="searchnav-contents">
-        <table>
-            <tr>
-                <td id="search-rating">
-                    Rating: <img src="/assets/images/stars.png" alt="rating" width="100px"/>
-                </td>
-                <td id="search-value">
-                    Value: <img src="/assets/images/stars.png" alt="value" width="100px"/>
-                </td>
-                <td id="search-bar">
-                    <input type="text" placeholder="Keyword Search" size="30"/>
-                </td>
-                <td id="search-button">
-                    <button type="button">Search</button>
-                </td>
-            </tr>
-        </table>
+    <div class="navbar navbar-default">
+        <div class="container">
+            <form class="form-inline" role="form" action="">
+                <div class="form-group">
+                    <label for="searchnav-rating">Rating:</label>
+                    <div>*****</div>
+                </div>
+                <div class="form-group">
+                    <label for="searchnav-value">Value:</label>
+                    <div>*****</div>
+                </div>
+                <div class="form-group">
+                    <label for="searchnav-searchbox">Search:</label>
+                    <input class="form-control" id="searchnav-searchbox" type="text"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
+
+<div class="container" id="content">
+    content for the page
 </div>
