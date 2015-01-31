@@ -5,9 +5,9 @@
                 <img src="/assets/images/logo1.jpg" alt="eat, play, sleep" class="img-responsive" id="navbar-image"/>
             </a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav nav-pills navbar-right">
             {headerdata}
-            <li>
+            <li role="presentation">
                 <a href='{link}'>{name}</a>
             </li>
             {/headerdata}

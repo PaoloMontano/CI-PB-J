@@ -21,6 +21,11 @@
 .nav {
     margin-top: 80px;
 }
+
+#searchnav {
+    margin-bottom: 20px;
+    background: #5bfff0;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
