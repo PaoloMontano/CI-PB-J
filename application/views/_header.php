@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">
-                <img src="/assets/images/logo1.jpg" alt="eat, play, sleep" class="img-responsive" id="navbar-image"/>
+                <img src="/assets/images/logo1.png" alt="eat, play, sleep" class="img-responsive" id="navbar-image"/>
             </a>
         </div>
         <ul class="nav nav-pills navbar-right">

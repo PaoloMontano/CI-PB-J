@@ -20,7 +20,7 @@
     <div id="sleep">
         <table class="results">
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>Times Square Suites Hotel</h3>
                     Times Square Suites is an apartment hotel located at the corner of Robson and Denman
@@ -33,7 +33,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>L'Hermitage Hotel</h3>
                     Celebrated as one of downtown Vancouver’s most popular boutique hotels, L’Hermitage
@@ -47,7 +47,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>Fairmont Pacific Rim Hotel</h3>
                     Fairmont Pacific Rim, luxury, naturally inspired to create a sophisticated and
@@ -61,7 +61,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>Times Square Suites Hotel</h3>
                     Times Square Suites is an apartment hotel located at the corner of Robson and Denman
@@ -74,7 +74,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>L'Hermitage Hotel</h3>
                     Celebrated as one of downtown Vancouver’s most popular boutique hotels, L’Hermitage
@@ -88,7 +88,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>Fairmont Pacific Rim Hotel</h3>
                     Fairmont Pacific Rim, luxury, naturally inspired to create a sophisticated and
@@ -102,7 +102,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>Times Square Suites Hotel</h3>
                     Times Square Suites is an apartment hotel located at the corner of Robson and Denman
@@ -115,7 +115,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>L'Hermitage Hotel</h3>
                     Celebrated as one of downtown Vancouver’s most popular boutique hotels, L’Hermitage
@@ -129,7 +129,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="results-image"><img src="/assets/images/logo1.jpg" alt="pic" width="100" height="100"></td>
+                <td class="results-image"><img src="/assets/images/logo1.png" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
                     <h3>Fairmont Pacific Rim Hotel</h3>
                     Fairmont Pacific Rim, luxury, naturally inspired to create a sophisticated and
