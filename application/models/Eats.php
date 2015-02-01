@@ -49,6 +49,11 @@ class Eats extends CI_Model
         return $this->data;
     }
 
+	// retrive the top three restaurants
+	public function topThree() {
+		return array($this->data[0], $this->data[1], $this->data[2]);
+	}
+
     // retrieve the first restaurant
     public function first() {
         return $this->data[0];

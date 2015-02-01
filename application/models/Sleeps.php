@@ -53,6 +53,11 @@ class Sleeps extends CI_Model
         return $this->data[0];
     }
 
+	// retrive the top three accomodations
+	public function topThree() {
+		return array($this->data[0], $this->data[1], $this->data[2]);
+	}
+
     // retrieve the last accomodation
     public function last() {
         $index = count($this->data) - 1;
