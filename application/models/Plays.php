@@ -7,7 +7,7 @@ class Plays extends CI_Model
         array(
             'id' => '1',
             'name' => 'Van Dusen Botanical Gardens',
-            'pic' => 'image1.jpg', 'link'=>'#',
+            'pic' => 'play_vandusen.jpg', 'link'=>'#',
             'description' => 'Be inspired by VanDusen Botanical Garden\'s 22 hectares of elegant landscapes with plant
                 species representing ecosystems ranging from the Himalayas to the Mediterranean, from
                 Louisiana swamps to the Pacific Northwest. ... '
@@ -15,14 +15,14 @@ class Plays extends CI_Model
         array(
             'id' => '2',
             'name' => 'Rio Theatre',
-            'pic' => 'image1.jpg', 'link'=>'#',
+            'pic' => 'play_rio.jpg', 'link'=>'#',
             'description' => 'The Rio Theatre on Broadway and Commercial, voted #1 in East Vancouver, is a multimedia
                 venue for premier independent cinema of first-run feature films and live entertainment... '
             ),
         array(
             'id' => '3',
             'name' => 'Dr. Sun Yat-Sen Classical Chinese Garden',
-            'pic' => 'image1.jpg', 'link'=>'#',
+            'pic' => 'play_sunyatsen.jpg', 'link'=>'#',
             'description' => 'Breathtaking, rain or shine… Step into our door and out of your daily life as your
                 heart and mind relax and energy renews. Journey back in time to 15th Century China
                 and enjoy this “window to another world”... '
