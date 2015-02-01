@@ -26,6 +26,11 @@
     margin-bottom: 20px;
     background: #5bfff0;
 }
+
+td {
+	padding: 10px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
