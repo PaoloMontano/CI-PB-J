@@ -7,14 +7,16 @@ class Eats extends CI_Model
         array(
             'id'            => '1',
             'name'          => 'Tuc Craft Kitchen',
-            'pic'           => 'eat_tuc.jpeg', 'link'=>'#',
+            'pic'           => 'eat_tuc.jpeg',
+            'link'          => '#',
             'description'   => 'Tuc Craft Kitchen is a restaurant and bar in Gastown, Vancouver.
                     Our vision was to create a gathering place that feels like it has always been here.
                     Our food is elegant, rustic, honest... '),
         array(
             'id'            => '2',
             'name'          => 'The Flying Pig',
-            'pic'           => 'eat_pig.jpg', 'link'=>'#',
+            'pic'           => 'eat_pig.jpg',
+            'link'          => '#',
             'description'   => 'I know what you’re thinking. The Flying Pig? You must have lots of pork on the menu,
                     right? Nothing could be further from the truth. To be honest, our menu breakdown has
                     a wide range of items and, yes, a small... '),
@@ -22,7 +24,7 @@ class Eats extends CI_Model
             'id'            => '3',
             'name'          => 'Guu with Garlic',
             'pic'           => 'eat_guu.jpg',
-            'link'          =>'#',
+            'link'          => '#',
             'description'   => 'Guu ​with Garlic is all about “Garlic is Sexy”. Also called “Guu Robson”, this is the
                     second Guu to open. Sexy is not just about the outside, but it’s the fundamental
                     attitude reflecting energy.')
