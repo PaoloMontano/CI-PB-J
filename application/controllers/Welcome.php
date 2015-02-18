@@ -22,6 +22,7 @@ class Welcome extends Application {
 
             $this->data['sleeps'] = $sleeps;
             $this->data['top-sleep'] = $sleeps[0]['pic'];
+            $this->data['top-sleep-link'] = $sleeps[0]['link'];
             $this->data = array_merge($this->data, $source);
         }
         // Grab to plays from model
@@ -34,6 +35,7 @@ class Welcome extends Application {
 
             $this->data['plays'] = $plays;
             $this->data['top-play'] = $plays[0]['pic'];
+            $this->data['top-play-link'] = $plays[0]['link'];
             $this->data = array_merge($this->data, $source);
         }
         // Grab top eats from model
@@ -46,6 +48,7 @@ class Welcome extends Application {
 
             $this->data['eats'] = $eats;
             $this->data['top-eat'] = $eats[0]['pic'];
+            $this->data['top-eat-link'] = $eats[0]['link'];
             $this->data = array_merge($this->data, $source);
         }
 		
