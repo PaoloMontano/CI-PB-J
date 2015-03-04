@@ -3,12 +3,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Eat extends Application
 {
-    
     public function index()
     {
         $this->data['pagetitle'] = 'WIP - Eat';
         $this->data['pagebody'] = 'eat';
-        
         // Grab data from model
         {
             $source = $this->eats->all();
@@ -24,7 +22,6 @@ class Eat extends Application
             $this->data['eats'] = $eats;
             $this->data = array_merge($this->data, $source);
         }
-        
         $this->render();
     }
 

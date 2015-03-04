@@ -2,7 +2,12 @@
 
 class Eats extends MY_Model {
 
+  var $phoneId;
   var $title;
+  var $desc;
+  var $image;
+  var $value;
+  var $rating;
 
   // Constructor
   public function __construct() {
