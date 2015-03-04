@@ -14,14 +14,14 @@
                 <img src="/assets/images/{image}" alt="pic">
             </td>
             <td>
-                <a href="/admin/editEat/{phoneId}">Edit</a> | 
-                <a href="/admin/deleteEat/{phoneId}">Delete</a>
+                <a href="/admineats/editEat/{phoneId}">Edit</a> | 
+                <a href="/admineats/deleteEat/{phoneId}">Delete</a>
             </td>
         </tr>
         {/eats}
     </table>
 </div>
 <br/>
-<a href="/admin/addEat">Add Eat</a>
+<a href="/admineats/addEat">Add Eat</a>
 <br/>
 <a href="./">Go back</a>
