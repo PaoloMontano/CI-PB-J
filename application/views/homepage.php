@@ -2,31 +2,31 @@
     <div class="row">
         <div class="col-md-4 col-xs-12">
             <h1>Top Hotels</h1>
-            <img src="/assets/images/image1.jpg" alt=""/>
+            <a href="{top-sleep-link}"><img src="/assets/images/{top-sleep}" alt="" height="200px"/></a>
             <ul>
-                <li>Hotel number 1</li>
-                <li>Hotel number 2</li>
-                <li>Hotel number 3</li>
+				{sleeps}
+                <li><a href="{link}">{name}</a></li>
+				{/sleeps}
             </ul>
             <button type="button" class="btn btn-default">View All</button>
         </div>
         <div class="col-md-4 col-xs-12">
             <h1>Top Attractions</h1>
-            <img src="/assets/images/image1.jpg" alt=""/>
+            <a href="{top-play-link}"><img src="/assets/images/{top-play}" alt="" height="200px"/></a>
             <ul>
-                <li>Attraction number 1</li>
-                <li>Attraction number 2</li>
-                <li>Attraction number 3</li>
+				{plays}
+                <li><a href="{link}">{name}</a></li>
+				{/plays}
             </ul>
             <button type="button" class="btn btn-default">View All</button>
         </div>
         <div class="col-md-4 col-xs-12">
             <h1>Top Restaurants</h1>
-            <img src="/assets/images/image1.jpg" alt=""/>
+            <a href="{top-eat-link}"><img src="/assets/images/{top-eat}" alt="" height="200px"/></a>
             <ul>
-                <li>Restaurant number 1</li>
-                <li>Restaurant number 2</li>
-                <li>Restaurant number 3</li>
+				{eats}
+                <li><a href="{link}">{name}</a></li>
+				{/eats}
             </ul>
             <button type="button" class="btn btn-default">View All</button>
         </div>
