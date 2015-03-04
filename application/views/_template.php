@@ -13,17 +13,13 @@
 <body>
 
     <!-- Header -->
-    <div class="row">
-        {header}
-    </div>
+    {header}
 
     <!-- Content -->
     {content}
 
     <!-- Footer -->
-    <div class="row">
-        {footer}
-    </div>
+    {footer}
 
     <script type="javascript" src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script type="javascript" src="/assets/vendor/jquery/jquery-2.1.3.min.js"></script>
