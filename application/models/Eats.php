@@ -1,6 +1,6 @@
 <?php
 
-class Eats extends CI_Model
+class Eats extends MY_Model
 {
 
     var $data = array(
@@ -32,27 +32,18 @@ class Eats extends CI_Model
 
     // Constructor
     public function __construct() {
-        parent::__construct();
-    }
-
-    // retrieve a single restaurant
-    public function get($which) {
-        // iterate over the data until we find the one we want
-        foreach ($this->data as $record)
-            if ($record['id'] == $which)
-                return $record;
-        return null;
+        parent::__construct('eats', 'phoneId');
     }
 
     // retrieve all of the restaurants
-    public function all() {
-        return $this->data;
-    }
+//    public function all() {
+//        return $this->data;
+//    }
 
-	// retrive the top three restaurants
-	public function topThree() {
-		return array($this->data[0], $this->data[1], $this->data[2]);
-	}
+    // retrive the top three restaurants
+    public function topThree() {
+        return array($this->data[0], $this->data[1], $this->data[2]);
+    }
 
     // retrieve the first restaurant
     public function first() {

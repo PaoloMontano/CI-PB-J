@@ -13,4 +13,4 @@
 </div>
 
 <br/>
-<a href="../">Go back</a>
+<a href="./">Go back</a>

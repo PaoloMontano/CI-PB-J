@@ -36,8 +36,13 @@ class Admin extends Application {
         $this->present($eats);
     }
     
+    function editEat($id)
+    {
+        $this->present($this->eats->get($id));
+    }
+    
     // Present a quotation for adding/editing
-    function present($quote)
+    function present($attraction)
     {
         // Format any errors
         $message = "";
@@ -48,33 +53,35 @@ class Admin extends Application {
         }
         $this->data['message'] = $message;
         
-        $this->data['fid'] = makeTextField('ID#', 'id', $quote->id, "Unique quote identifier, system-assigned", 10, 10, true);
-        $this->data['fwho'] = makeTextField('Author', 'who', $quote->who);
-        $this->data['fmug'] = makeTextField('Picture', 'mug', $quote->mug);
-        $this->data['fwhat'] = makeTextArea('The Quote', 'what', $quote->what);
+        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $attraction->phoneId, "", 11, 11);
+        $this->data['title'] = makeTextField('Name', 'title', $attraction->title);
+        $this->data['image'] = makeTextField('Picture', 'image', $attraction->image);
+        $this->data['desc'] = makeTextArea('Description', 'desc', $attraction->desc);
         
-        $this->data['fsubmit'] = makeSubmitButton('Process Quote', "Click here to validate the quotation data", 'btn-success');
+        $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the eat data", 'btn-success');
         
-        $this->data['pagebody'] = 'quote_edit';
+        $this->data['pagebody'] = 'edit_eat';
         $this->render();
     }
     
     // Process a quotation edit
     function confirm()
     {
-        $record = $this->quotes->create();
+        $record = $this->eats->create();
         
         // Extract submitted fields
-        $record->id = $this->input->post('id');
-        $record->who = $this->input->post('who');
-        $record->mug = $this->input->post('mug');
-        $record->what = $this->input->post('what');
+        $record->phoneId = $this->input->post('phoneId');
+        $record->title = $this->input->post('title');
+        $record->image = $this->input->post('image');
+        $record->desc = $this->input->post('desc');
         
         // Validation
-        if (empty($record->who))
-            $this->errors[] = "You must specify an author.";
-        if (strlen($record->what) < 20)
-            $this->errors[] = "A quotation must be at least 20 characters long.";
+        if (empty($record->phoneId))
+            $this->errors[] = "The attraction must have a phone number to contact.";
+        if (empty($record->title))
+            $this->errors[] = "You must have a name for the attraction.";
+        if (strlen($record->desc) < 20)
+            $this->errors[] = "A description must be at least 20 characters long.";
         
         // Redisplay if any errors
         if (count($this->errors) > 0)
@@ -83,12 +90,17 @@ class Admin extends Application {
             return; // Make sure we don't try to save anything
         }
         
-        
         // Save stuff
-        if (empty($record->id)) $this->quotes->add($record);
-        else $this->quotes->update($record);
+        if (empty($record->id)) $this->eats->add($record);
+        else $this->eats->update($record);
         
-        $this->index();
+        $this->manageEats();
+    }
+    
+    function deleteEat($phoneId)
+    {
+        $this->eats->delete($phoneId);
+        $this->manageEats();
     }
 
 }

@@ -8,20 +8,20 @@
         </tr>
         {eats}
         <tr>
-            <td>{id}</td>
-            <td>{name}</td>
+            <td>{phoneId}</td>
+            <td>{title}</td>
             <td>
-                <img src="/assets/images/{pic}" alt="pic">
+                <img src="/assets/images/{image}" alt="pic">
             </td>
             <td>
-                <a href="/admin/editEat/{id}">Edit</a> | 
-                <a href="/admin/deleteEat/{id}">Delete</a>
+                <a href="/admin/editEat/{phoneId}">Edit</a> | 
+                <a href="/admin/deleteEat/{phoneId}">Delete</a>
             </td>
         </tr>
         {/eats}
     </table>
 </div>
 <br/>
-<a href="#">Add Eat</a>
+<a href="/admin/addEat">Add Eat</a>
 <br/>
-<a href="../">Go back</a>
+<a href="./">Go back</a>
