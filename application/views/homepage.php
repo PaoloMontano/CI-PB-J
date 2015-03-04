@@ -8,7 +8,7 @@
                 <li><a href="{link}">{name}</a></li>
 				{/sleeps}
             </ul>
-            <button type="button" class="btn btn-default">View All</button>
+            <a href="/eat" role="button" class="btn btn-default">View All</a>
         </div>
         <div class="col-md-4 col-xs-12">
             <h1>Top Attractions</h1>
@@ -18,7 +18,7 @@
                 <li><a href="{link}">{name}</a></li>
 				{/plays}
             </ul>
-            <button type="button" class="btn btn-default">View All</button>
+            <a href="/play" role="button" class="btn btn-default">View All</a>
         </div>
         <div class="col-md-4 col-xs-12">
             <h1>Top Restaurants</h1>
@@ -28,7 +28,7 @@
                 <li><a href="{link}">{name}</a></li>
 				{/eats}
             </ul>
-            <button type="button" class="btn btn-default">View All</button>
+            <a href="/sleep" role="button" class="btn btn-default">View All</a>
         </div>
     </div>
 </div>
