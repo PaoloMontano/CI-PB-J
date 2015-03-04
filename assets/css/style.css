@@ -6,6 +6,15 @@
     width: 250px;
 }
 
+.manage img {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+#manage a {
+    display: block;
+}
+
 .container {
     max-width: 960px
 }
@@ -27,8 +36,8 @@
     background: #5bfff0;
 }
 
-td {
-	padding: 10px;
+td, th {
+    padding: 10px;
 }
 
 /* Sticky footer styles
