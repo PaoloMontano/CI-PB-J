@@ -13,7 +13,7 @@ class Admin extends Application {
     //-------------------------------------------------------------
     function index()
     {
-        $this->data['title'] = "Attraction Maintenance";
+        $this->data['title'] = "Manage Attractions";
         //$this->data['quotes'] = $this->quotes->all();
         
 	$this->data['pagebody'] = 'admin';
@@ -22,7 +22,7 @@ class Admin extends Application {
     
     function manageEats()
     {
-        $this->data['title'] = "Attraction Maintenance";
+        $this->data['title'] = "Manage Eats";
         
         $this->data['eats'] = $this->eats->all();
         
@@ -91,7 +91,7 @@ class Admin extends Application {
         }
         
         // Save stuff
-        if (empty($record->id)) $this->eats->add($record);
+        if (empty($record->phoneId)) $this->eats->add($record);
         else $this->eats->update($record);
         
         $this->manageEats();
