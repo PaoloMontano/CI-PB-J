@@ -5,6 +5,8 @@
             <th>Phone</th>
             <th>Name</th>
             <th>Image</th>
+            <th>Value</th>
+            <th>Rating</th>
             <th>Manage</th>
         </tr>
         {eats}
@@ -15,6 +17,8 @@
             <td>
                 <img src="/assets/images/{image}" alt="pic">
             </td>
+            <td>{value}</td>
+            <td>{rating}</td>
             <td>
                 <a href="/admineats/edit/{id}">Edit</a> | 
                 <a href="/admineats/delete/{id}">Delete</a>

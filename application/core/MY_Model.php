@@ -264,16 +264,16 @@ class MY_Model extends CI_Model implements Active_Record {
             return null;
     }
     
-    function getHighestRating() {
-        $this->db->order_by("rating", 'desc');
-        $this->db->limit(1);
+    function getHighest($column, $count) {
+        $this->db->order_by($column, 'desc');
+        $this->db->limit($count);
         $query = $this->db->get($this->_tableName);
         return $query->result();
     }
     
-    function getHighestRatings($num) {
-        $this->db->order_by("rating", 'desc');
-        $this->db->limit($num);
+    function getLowest($column, $count) {
+        $this->db->order_by($column, 'asc');
+        $this->db->limit($count);
         $query = $this->db->get($this->_tableName);
         return $query->result();
     }
