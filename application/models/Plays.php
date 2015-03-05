@@ -1,6 +1,6 @@
 <?php
 
-class Plays extends CI_Model
+class Plays extends MY_Model
 {
 
     var $data = array(
@@ -34,22 +34,22 @@ class Plays extends CI_Model
 
     // Constructor
     public function __construct() {
-        parent::__construct();
+        parent::__construct('plays', 'id');
     }
 
-    // retrieve a single attractions
-    public function get($which) {
-        // iterate over the data until we find the one we want
-        foreach ($this->data as $record)
-            if ($record['id'] == $which)
-                return $record;
-        return null;
-    }
-
-    // retrieve all of the attractions
-    public function all() {
-        return $this->data;
-    }
+//    // retrieve a single attractions
+//    public function get($which) {
+//        // iterate over the data until we find the one we want
+//        foreach ($this->data as $record)
+//            if ($record['id'] == $which)
+//                return $record;
+//        return null;
+//    }
+//
+//    // retrieve all of the attractions
+//    public function all() {
+//        return $this->data;
+//    }
 
     // retrieve the first attraction
     public function first() {

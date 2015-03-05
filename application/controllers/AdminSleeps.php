@@ -1,6 +1,6 @@
 <?php
 
-class AdminEats extends Application {
+class AdminSleeps extends Application {
 
     function __construct()
     {
@@ -13,27 +13,27 @@ class AdminEats extends Application {
     //-------------------------------------------------------------
     function index()
     {
-        $this->data['title'] = "Manage Eats";
+        $this->data['title'] = "Manage Sleeps";
         
-        $this->data['eats'] = $this->eats->all();
+        $this->data['sleeps'] = $this->sleeps->all();
         
-	$this->data['pagebody'] = 'admin_eats';
+	$this->data['pagebody'] = 'admin_sleeps';
         $this->render();
     }
     
     function add()
     {
-        $eats = $this->eats->create();
-        $this->present($eats);
+        $sleeps = $this->sleeps->create();
+        $this->present($sleeps);
     }
     
     function edit($id)
     {
-        $this->present($this->eats->get($id));
+        $this->present($this->sleeps->get($id));
     }
     
-    // Present restaurant info for adding/editing
-    function present($eat)
+    // Present hotel info for adding/editing
+    function present($sleep)
     {
         // Format any errors
         $message = "";
@@ -44,15 +44,15 @@ class AdminEats extends Application {
         }
         $this->data['message'] = $message;
         
-        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $eat->phoneId, "", 11, 11);
-        $this->data['title'] = makeTextField('Name', 'title', $eat->title);
-        $this->data['image'] = makeTextField('Picture', 'image', $eat->image);
-        $this->data['desc'] = makeTextArea('Description', 'desc', $eat->desc);
+        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $sleep->phoneId, "", 11, 11);
+        $this->data['title'] = makeTextField('Name', 'title', $sleep->title);
+        $this->data['image'] = makeTextField('Picture', 'image', $sleep->image);
+        $this->data['desc'] = makeTextArea('Description', 'desc', $sleep->desc);
         
-        $this->data['pagebody'] = 'edit_eat';
-        $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the restaurant data", 'btn-success');
-        if (!empty($eat->id))
-            $this->data['id'] = $eat->id;
+        $this->data['pagebody'] = 'edit_sleep';
+        $this->data['submit'] = makeSubmitButton('Submit Sleep', "Click here to validate the hotel data", 'btn-success');
+        if (!empty($sleep->id))
+            $this->data['id'] = $sleep->id;
         else
             $this->data['id'] = "-1";
         
@@ -62,7 +62,7 @@ class AdminEats extends Application {
     // Validates and confirms the information placed into form
     function confirm($id)
     {
-        $record = $this->eats->create();
+        $record = $this->sleeps->create();
         
         // Extract submitted fields
         $record->phoneId = $this->input->post('phoneId');
@@ -72,17 +72,17 @@ class AdminEats extends Application {
         
         // Validation
         if (empty($record->phoneId))
-            $this->errors[] = "The restaurant must have a phone number to contact.";
+            $this->errors[] = "The hotel must have a phone number to contact.";
         else if (!is_numeric($record->phoneId))
             $this->errors[] = "The phone number must contain only numbers.";
         
         if (empty($record->title))
-            $this->errors[] = "The restaurant must have a name.";
+            $this->errors[] = "The hotel must have a name.";
         
         if (strlen($record->desc) < 20)
             $this->errors[] = "The description must be at least 20 characters long.";
         
-        // Redisplay if any errors
+        // Redissleep if any errors
         if (count($this->errors) > 0)
         {
             $record->id = $id;
@@ -93,12 +93,12 @@ class AdminEats extends Application {
         // Save stuff
         if ($id == -1)
         {
-            $this->eats->add($record);
+            $this->sleeps->add($record);
         }
         else
         {
             $record->id = $id;
-            $this->eats->update($record);
+            $this->sleeps->update($record);
         }
         
         $this->index();
@@ -106,7 +106,7 @@ class AdminEats extends Application {
     
     function delete($id)
     {
-        $this->eats->delete($id);
+        $this->sleeps->delete($id);
         $this->index();
     }
 

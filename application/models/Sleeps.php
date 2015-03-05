@@ -1,6 +1,6 @@
 <?php
 
-class Sleeps extends CI_Model
+class Sleeps extends MY_Model
 {
 
     var $data = array(
@@ -34,19 +34,19 @@ class Sleeps extends CI_Model
         parent::__construct();
     }
 
-    // retrieve a single accomodation
-    public function get($which) {
-        // iterate over the data until we find the one we want
-        foreach ($this->data as $record)
-            if ($record['id'] == $which)
-                return $record;
-        return null;
-    }
-
-    // retrieve all of the accomodation
-    public function all() {
-        return $this->data;
-    }
+//    // retrieve a single accomodation
+//    public function get($which) {
+//        // iterate over the data until we find the one we want
+//        foreach ($this->data as $record)
+//            if ($record['id'] == $which)
+//                return $record;
+//        return null;
+//    }
+//
+//    // retrieve all of the accomodation
+//    public function all() {
+//        return $this->data;
+//    }
 
     // retrieve the first accomodation
     public function first() {

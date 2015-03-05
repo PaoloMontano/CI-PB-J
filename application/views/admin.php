@@ -4,13 +4,13 @@
             <td><a href="/admineats">Manage Eats</a></td>
         </tr>
         <tr>
-            <td><a href="/admin/manageSleeps">Manage Sleeps</a></td>
+            <td><a href="/adminplays">Manage Plays</a></td>
         </tr>
         <tr>
-            <td><a href="/admin/managePlays">Manage Plays</a></td>
+            <td><a href="/adminsleeps">Manage Sleeps</a></td>
         </tr>
     </table>
 </div>
 
 <br/>
-<a href="./">Go back</a>
+<a href="/welcome/">Go back</a>

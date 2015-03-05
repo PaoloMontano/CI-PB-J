@@ -1,6 +1,6 @@
 <?php
 
-class AdminEats extends Application {
+class AdminPlays extends Application {
 
     function __construct()
     {
@@ -13,27 +13,27 @@ class AdminEats extends Application {
     //-------------------------------------------------------------
     function index()
     {
-        $this->data['title'] = "Manage Eats";
+        $this->data['title'] = "Manage Plays";
         
-        $this->data['eats'] = $this->eats->all();
+        $this->data['plays'] = $this->plays->all();
         
-	$this->data['pagebody'] = 'admin_eats';
+	$this->data['pagebody'] = 'admin_plays';
         $this->render();
     }
     
     function add()
     {
-        $eats = $this->eats->create();
-        $this->present($eats);
+        $plays = $this->plays->create();
+        $this->present($plays);
     }
     
     function edit($id)
     {
-        $this->present($this->eats->get($id));
+        $this->present($this->plays->get($id));
     }
     
-    // Present restaurant info for adding/editing
-    function present($eat)
+    // Present attraction info for adding/editing
+    function present($play)
     {
         // Format any errors
         $message = "";
@@ -44,15 +44,15 @@ class AdminEats extends Application {
         }
         $this->data['message'] = $message;
         
-        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $eat->phoneId, "", 11, 11);
-        $this->data['title'] = makeTextField('Name', 'title', $eat->title);
-        $this->data['image'] = makeTextField('Picture', 'image', $eat->image);
-        $this->data['desc'] = makeTextArea('Description', 'desc', $eat->desc);
+        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $play->phoneId, "", 11, 11);
+        $this->data['title'] = makeTextField('Name', 'title', $play->title);
+        $this->data['image'] = makeTextField('Picture', 'image', $play->image);
+        $this->data['desc'] = makeTextArea('Description', 'desc', $play->desc);
         
-        $this->data['pagebody'] = 'edit_eat';
-        $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the restaurant data", 'btn-success');
-        if (!empty($eat->id))
-            $this->data['id'] = $eat->id;
+        $this->data['pagebody'] = 'edit_play';
+        $this->data['submit'] = makeSubmitButton('Submit Play', "Click here to validate the attraction data", 'btn-success');
+        if (!empty($play->id))
+            $this->data['id'] = $play->id;
         else
             $this->data['id'] = "-1";
         
@@ -62,7 +62,7 @@ class AdminEats extends Application {
     // Validates and confirms the information placed into form
     function confirm($id)
     {
-        $record = $this->eats->create();
+        $record = $this->plays->create();
         
         // Extract submitted fields
         $record->phoneId = $this->input->post('phoneId');
@@ -72,12 +72,12 @@ class AdminEats extends Application {
         
         // Validation
         if (empty($record->phoneId))
-            $this->errors[] = "The restaurant must have a phone number to contact.";
+            $this->errors[] = "The attraction must have a phone number to contact.";
         else if (!is_numeric($record->phoneId))
             $this->errors[] = "The phone number must contain only numbers.";
         
         if (empty($record->title))
-            $this->errors[] = "The restaurant must have a name.";
+            $this->errors[] = "The attraction must have a name.";
         
         if (strlen($record->desc) < 20)
             $this->errors[] = "The description must be at least 20 characters long.";
@@ -93,12 +93,12 @@ class AdminEats extends Application {
         // Save stuff
         if ($id == -1)
         {
-            $this->eats->add($record);
+            $this->plays->add($record);
         }
         else
         {
             $record->id = $id;
-            $this->eats->update($record);
+            $this->plays->update($record);
         }
         
         $this->index();
@@ -106,7 +106,7 @@ class AdminEats extends Application {
     
     function delete($id)
     {
-        $this->eats->delete($id);
+        $this->plays->delete($id);
         $this->index();
     }
 
