@@ -8,7 +8,6 @@ class AdminEats extends Application {
         $this->load->helper('formfields');
     }
 
-    
     //-------------------------------------------------------------
     //  The normal pages
     //-------------------------------------------------------------
@@ -33,8 +32,8 @@ class AdminEats extends Application {
         $this->present($this->eats->get($id));
     }
     
-    // Present a quotation for adding/editing
-    function present($attraction)
+    // Present a restaurant for adding/editing
+    function present($eat)
     {
         // Format any errors
         $message = "";
@@ -45,24 +44,26 @@ class AdminEats extends Application {
         }
         $this->data['message'] = $message;
         
-        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $attraction->phoneId, "", 11, 11);
-        $this->data['title'] = makeTextField('Name', 'title', $attraction->title);
-        $this->data['image'] = makeTextField('Picture', 'image', $attraction->image);
-        $this->data['desc'] = makeTextArea('Description', 'desc', $attraction->desc);
+        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $eat->phoneId, "", 11, 11);
+        $this->data['title'] = makeTextField('Name', 'title', $eat->title);
+        $this->data['image'] = makeTextField('Picture', 'image', $eat->image);
+        $this->data['desc'] = makeTextArea('Description', 'desc', $eat->desc);
         
         $this->data['pagebody'] = 'edit_eat';
         $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the eat data", 'btn-success');
-        if ($attraction->id)
-            $this->data['id'] = $attraction->id;
+        if (isset($eat->id))
+            $this->data['id'] = $eat->id;
         else
             $this->data['id'] = "-1";
         
         $this->render();
     }
     
+    // Validates and confirms the information placed into form
     function confirm($id)
     {
         $record = $this->eats->create();
+        $record->id = $id;
         
         // Extract submitted fields
         $record->phoneId = $this->input->post('phoneId');
@@ -72,11 +73,15 @@ class AdminEats extends Application {
         
         // Validation
         if (empty($record->phoneId))
-            $this->errors[] = "The attraction must have a phone number to contact.";
+            $this->errors[] = "The restaurant must have a phone number to contact.";
+        else if (!is_numeric($record->phoneId))
+            $this->errors[] = "The phone number must contain only numbers.";
+        
         if (empty($record->title))
-            $this->errors[] = "You must have a name for the attraction.";
+            $this->errors[] = "The restaurant must have a name.";
+        
         if (strlen($record->desc) < 20)
-            $this->errors[] = "A description must be at least 20 characters long.";
+            $this->errors[] = "The description must be at least 20 characters long.";
         
         // Redisplay if any errors
         if (count($this->errors) > 0)
@@ -87,12 +92,12 @@ class AdminEats extends Application {
         
         // Save stuff
         if ($id == -1)
-            $this->eats->add($record);
-        else
         {
-            $record->id = $id;
-            $this->eats->update($record);
+            unset($record->id);
+            $this->eats->add($record);
         }
+        else
+            $this->eats->update($record);
         
         $this->index();
     }
@@ -104,6 +109,3 @@ class AdminEats extends Application {
     }
 
 }
-
-/* End of file Welcome.php */
-/* Location: application/controllers/Welcome.php */
