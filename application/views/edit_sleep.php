@@ -7,6 +7,11 @@
         {title}
         {image}
         {desc}
+        {value}
+        {rating}
         {submit}
     </form>
 </div>
+
+<br/>
+<a href="/adminsleeps">Go back</a>

@@ -48,6 +48,8 @@ class AdminEats extends Application {
         $this->data['title'] = makeTextField('Name', 'title', $eat->title);
         $this->data['image'] = makeTextField('Picture', 'image', $eat->image);
         $this->data['desc'] = makeTextArea('Description', 'desc', $eat->desc);
+        $this->data['value'] = makeTextField('Value', 'value', $eat->value);
+        $this->data['rating'] = makeTextField('Rating', 'rating', $eat->rating);
         
         $this->data['pagebody'] = 'edit_eat';
         $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the restaurant data", 'btn-success');
@@ -69,18 +71,22 @@ class AdminEats extends Application {
         $record->title = $this->input->post('title');
         $record->image = $this->input->post('image');
         $record->desc = $this->input->post('desc');
+        $record->value = $this->input->post('value');
+        $record->rating = $this->input->post('rating');
         
         // Validation
         if (empty($record->phoneId))
             $this->errors[] = "The restaurant must have a phone number to contact.";
         else if (!is_numeric($record->phoneId))
             $this->errors[] = "The phone number must contain only numbers.";
-        
         if (empty($record->title))
             $this->errors[] = "The restaurant must have a name.";
-        
         if (strlen($record->desc) < 20)
             $this->errors[] = "The description must be at least 20 characters long.";
+        if (!empty($record->value) && (!is_numeric($record->value) || $record->value < 1 || $record->value > 5))
+            $this->errors[] = "The value can only be a number from 1-5";
+        if (!empty($record->rating) && (!is_numeric($record->rating) || $record->rating < 1 || $record->rating > 5))
+            $this->errors[] = "The rating can only be a number from 1-5";
         
         // Redisplay if any errors
         if (count($this->errors) > 0)
