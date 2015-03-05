@@ -4,31 +4,31 @@
             <h1>Top Eats</h1>
             {top-eat}<a href="{link}"><img src="/assets/images/{image}" alt="" height="200px"/></a>{/top-eat}
             <ul>
-				{eats}
+		{eats}
                 <li><a href="{link}">{title}</a></li>
-				{/eats}
+		{/eats}
             </ul>
-            <button type="button" class="btn btn-default" onclick="location.href='/eat'">View All</button>
+            <a href="/eat" role="button" class="btn btn-default">View All</a>
         </div>
         <div class="col-md-4 col-xs-12">
             <h1>Top Plays</h1>
             {top-play}<a href="{link}"><img src="/assets/images/{image}" alt="" height="200px"/></a>{/top-play}
             <ul>
-				{plays}
+		{plays}
                 <li><a href="{link}">{title}</a></li>
-				{/plays}
+		{/plays}
             </ul>
-            <button type="button" class="btn btn-default" onclick="location.href='/play'">View All</button>
+            <a href="/play" role="button" class="btn btn-default">View All</a>
         </div>
         <div class="col-md-4 col-xs-12">
             <h1>Top Sleeps</h1>
             {top-sleep}<a href="{link}"><img src="/assets/images/{image}" alt="" height="200px"/></a>{/top-sleep}
             <ul>
-				{sleeps}
+                {sleeps}
                 <li><a href="{link}">{title}</a></li>
-				{/sleeps}
+                {/sleeps}
             </ul>
-            <button type="button" class="btn btn-default" onclick="location.href='/sleep'">View All</button>
+            <a href="/sleep" role="button" class="btn btn-default">View All</a>
         </div>
     </div>
 </div>
