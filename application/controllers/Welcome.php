@@ -2,58 +2,29 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends Application {
+class Welcome extends Application
+{
 
-	function __construct() {
-		parent::__construct();
-	}
+    function __construct() {
+            parent::__construct();
+    }
 
-	public function index()
-	{
-		$this->data['pagebody'] = 'homepage';
-		
-        // Grab top sleeps from model
-        {
-            $source = $this->sleeps->topThree();
-            $sleeps = array();
-            foreach ($source as $record) {
-                $sleeps[] = array('name' => $record['name'], 'pic' => $record['pic'], 'link' => $record['link']);
-            }
+    public function index()
+    {
+        $this->data['pagebody'] = 'homepage';
 
-            $this->data['sleeps'] = $sleeps;
-            $this->data['top-sleep'] = $sleeps[0]['pic'];
-            $this->data['top-sleep-link'] = $sleeps[0]['link'];
-            $this->data = array_merge($this->data, $source);
-        }
-        // Grab to plays from model
-        {
-            $source = $this->plays->topThree();
-            $eats = array();
-            foreach ($source as $record) {
-                $plays[] = array('name' => $record['name'], 'pic' => $record['pic'], 'link' => $record['link']);
-            }
+        $this->data['top-eat'] = $this->eats->getHighest("rating", 1);
+        $this->data['eats'] = $this->eats->getHighest("rating", 3);
+        
+        $this->data['top-play'] = $this->plays->getHighest("rating", 1);
+        $this->data['plays'] = $this->plays->getHighest("rating", 3);
+        
+        $this->data['top-sleep'] = $this->sleeps->getHighest("rating", 1);
+        $this->data['sleeps'] = $this->sleeps->getHighest("rating", 3);
+        
 
-            $this->data['plays'] = $plays;
-            $this->data['top-play'] = $plays[0]['pic'];
-            $this->data['top-play-link'] = $plays[0]['link'];
-            $this->data = array_merge($this->data, $source);
-        }
-        // Grab top eats from model
-        {
-            $source = $this->eats->topThree();
-            $eats = array();
-            foreach ($source as $record) {
-                $eats[] = array('name' => $record['name'], 'pic' => $record['pic'], 'link' => $record['link']);
-            }
-
-            $this->data['eats'] = $eats;
-            $this->data['top-eat'] = $eats[0]['pic'];
-            $this->data['top-eat-link'] = $eats[0]['link'];
-            $this->data = array_merge($this->data, $source);
-        }
-		
-		$this->render();
-	}
+            $this->render();
+    }
 }
 
 /* End of file welcome.php */
