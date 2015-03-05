@@ -10,9 +10,10 @@
         {value}
         {rating}
         {link}
+        <br/>
         {submit}
     </form>
 </div>
 
 <br/>
-<a href="/admineats">Go back</a>
+<a href="/admineats" role="button" class="btn btn-default">Go Back</a>

@@ -28,6 +28,5 @@
     </table>
 </div>
 <br/>
-<a href="/adminplays/add">Add Play</a>
-<br/>
-<a href="/admin">Go back</a>
+<a href="/adminplays/add" role="button" class="btn btn-default">Add Play</a>
+<a href="/admin" role="button" class="btn btn-default">Go Back</a>

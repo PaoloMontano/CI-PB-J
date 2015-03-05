@@ -268,6 +268,7 @@ class MY_Model extends CI_Model implements Active_Record {
 class MY_Model_PBJ extends MY_Model
 {
 
+    // Grab the highest column value from the table
     function getHighest($column, $count)
     {
         $this->db->order_by($column, 'desc');
@@ -276,6 +277,7 @@ class MY_Model_PBJ extends MY_Model
         return $query->result();
     }
     
+    // Grab the lowest column value from the table
     function getLowest($column, $count)
     {
         $this->db->order_by($column, 'asc');

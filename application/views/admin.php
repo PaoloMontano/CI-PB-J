@@ -13,4 +13,4 @@
 </div>
 
 <br/>
-<a href="/welcome/">Go back</a>
+<a href="/welcome" role="button" class="btn btn-default">Go Back</a>

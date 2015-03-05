@@ -28,6 +28,5 @@
     </table>
 </div>
 <br/>
-<a href="/admineats/add">Add Eat</a>
-<br/>
-<a href="/admin">Go back</a>
+<a href="/admineats/add" role="button" class="btn btn-default">Add Eat</a>
+<a href="/admin" role="button" class="btn btn-default">Go Back</a>

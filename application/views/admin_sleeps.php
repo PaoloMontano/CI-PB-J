@@ -28,6 +28,5 @@
     </table>
 </div>
 <br/>
-<a href="/adminsleeps/add">Add Sleep</a>
-<br/>
-<a href="/admin">Go back</a>
+<a href="/adminsleeps/add" role="button" class="btn btn-default">Add Sleep</a>
+<a href="/admin" role="button" class="btn btn-default">Go Back</a>
