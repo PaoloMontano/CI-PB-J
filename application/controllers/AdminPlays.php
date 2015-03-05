@@ -50,6 +50,7 @@ class AdminPlays extends Application {
         $this->data['desc'] = makeTextArea('Description', 'desc', $play->desc);
         $this->data['value'] = makeTextField('Value', 'value', $play->value);
         $this->data['rating'] = makeTextField('Rating', 'rating', $play->rating);
+        $this->data['link'] = makeTextField('Link', 'link', $play->link);
         
         $this->data['pagebody'] = 'edit_play';
         $this->data['submit'] = makeSubmitButton('Submit Play', "Click here to validate the attraction data", 'btn-success');
@@ -73,6 +74,7 @@ class AdminPlays extends Application {
         $record->desc = $this->input->post('desc');
         $record->value = $this->input->post('value');
         $record->rating = $this->input->post('rating');
+        $record->link = $this->input->post('link');
         
         // Validation
         if (empty($record->phoneId))

@@ -50,6 +50,7 @@ class AdminSleeps extends Application {
         $this->data['desc'] = makeTextArea('Description', 'desc', $sleep->desc);
         $this->data['value'] = makeTextField('Value', 'value', $sleep->value);
         $this->data['rating'] = makeTextField('Rating', 'rating', $sleep->rating);
+        $this->data['link'] = makeTextField('Link', 'link', $sleep->link);
         
         $this->data['pagebody'] = 'edit_sleep';
         $this->data['submit'] = makeSubmitButton('Submit Sleep', "Click here to validate the hotel data", 'btn-success');
@@ -73,6 +74,7 @@ class AdminSleeps extends Application {
         $record->desc = $this->input->post('desc');
         $record->value = $this->input->post('value');
         $record->rating = $this->input->post('rating');
+        $record->link = $this->input->post('link');
         
         // Validation
         if (empty($record->phoneId))

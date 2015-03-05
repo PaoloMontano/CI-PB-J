@@ -50,6 +50,7 @@ class AdminEats extends Application {
         $this->data['desc'] = makeTextArea('Description', 'desc', $eat->desc);
         $this->data['value'] = makeTextField('Value', 'value', $eat->value);
         $this->data['rating'] = makeTextField('Rating', 'rating', $eat->rating);
+        $this->data['link'] = makeTextField('Link', 'link', $eat->link);
         
         $this->data['pagebody'] = 'edit_eat';
         $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the restaurant data", 'btn-success');
@@ -73,6 +74,7 @@ class AdminEats extends Application {
         $record->desc = $this->input->post('desc');
         $record->value = $this->input->post('value');
         $record->rating = $this->input->post('rating');
+        $record->link = $this->input->post('link');
         
         // Validation
         if (empty($record->phoneId))

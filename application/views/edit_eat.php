@@ -9,6 +9,7 @@
         {desc}
         {value}
         {rating}
+        {link}
         {submit}
     </form>
 </div>
