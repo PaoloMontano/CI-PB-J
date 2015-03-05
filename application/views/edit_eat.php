@@ -2,7 +2,7 @@
     <div class="errors">
         {message}
     </div>
-    <form action="/admineats/confirmedit" method="post">
+    <form action="/admineats/confirm/{id}" method="post">
         {phoneId}
         {title}
         {image}

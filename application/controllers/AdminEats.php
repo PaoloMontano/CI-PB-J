@@ -8,6 +8,7 @@ class AdminEats extends Application {
         $this->load->helper('formfields');
     }
 
+    
     //-------------------------------------------------------------
     //  The normal pages
     //-------------------------------------------------------------
@@ -24,13 +25,11 @@ class AdminEats extends Application {
     function addEat()
     {
         $eats = $this->eats->create();
-        $this->data['pagebody'] = 'add_edit';
         $this->present($eats);
     }
     
     function editEat($id)
     {
-        $this->data['pagebody'] = 'edit_eat';
         $this->present($this->eats->get($id));
     }
     
@@ -51,12 +50,17 @@ class AdminEats extends Application {
         $this->data['image'] = makeTextField('Picture', 'image', $attraction->image);
         $this->data['desc'] = makeTextArea('Description', 'desc', $attraction->desc);
         
+        $this->data['pagebody'] = 'edit_eat';
         $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the eat data", 'btn-success');
+        if ($attraction->id)
+            $this->data['id'] = $attraction->id;
+        else
+            $this->data['id'] = "-1";
         
         $this->render();
     }
     
-    function confirmEdit()
+    function confirm($id)
     {
         $record = $this->eats->create();
         
@@ -78,51 +82,24 @@ class AdminEats extends Application {
         if (count($this->errors) > 0)
         {
             $this->present($record);
-            return; // Make sure we don't try to save anything
+            return;
         }
         
         // Save stuff
-        if (!$this->eats->get(($record->phoneId))) $this->eats->add($record);
-        else $this->eats->update($record);
-        
-        $this->index();
-    }
-    
-    function confirmAdd()
-    {
-        $record = $this->eats->create();
-        
-        // Extract submitted fields
-        $record->phoneId = $this->input->post('phoneId');
-        $record->title = $this->input->post('title');
-        $record->image = $this->input->post('image');
-        $record->desc = $this->input->post('desc');
-        
-        // Validation
-        if (empty($record->phoneId))
-            $this->errors[] = "The attraction must have a phone number to contact.";
-        if (empty($record->title))
-            $this->errors[] = "You must have a name for the attraction.";
-        if (strlen($record->desc) < 20)
-            $this->errors[] = "A description must be at least 20 characters long.";
-        
-        // Redisplay if any errors
-        if (count($this->errors) > 0)
+        if ($id == -1)
+            $this->eats->add($record);
+        else
         {
-            $this->present($record);
-            return; // Make sure we don't try to save anything
+            $record->id = $id;
+            $this->eats->update($record);
         }
-        
-        // Save stuff
-        if (!$this->eats->get(($record->phoneId))) $this->eats->add($record);
-        else $this->eats->update($record);
         
         $this->index();
     }
     
-    function deleteEat($phoneId)
+    function deleteEat($id)
     {
-        $this->eats->delete($phoneId);
+        $this->eats->delete($id);
         $this->index();
     }
 

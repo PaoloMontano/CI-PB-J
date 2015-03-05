@@ -32,7 +32,7 @@ class Eats extends MY_Model
 
     // Constructor
     public function __construct() {
-        parent::__construct('eats', 'phoneId');
+        parent::__construct('eats', 'id');
     }
 
     // retrieve all of the restaurants
