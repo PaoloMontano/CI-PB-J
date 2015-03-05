@@ -8,7 +8,7 @@ class Sleep extends Application
     {
         $this->data['pagetitle'] = 'WIP - Sleep';
         $this->data['pagebody'] = 'sleep';
-        $this->data['sleep'] = $this->sleeps->all();
+        $this->data['sleeps'] = $this->sleeps->all();
         
         $this->render();
     }

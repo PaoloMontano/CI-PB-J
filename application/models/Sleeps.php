@@ -50,13 +50,13 @@ class Sleeps extends MY_Model
 
     // retrieve the first accomodation
     public function first() {
-        return $this->data[0];
+        return $this->sleeps->get(1);
     }
 
-	// retrive the top three accomodations
-	public function topThree() {
-		return array($this->data[0], $this->data[1], $this->data[2]);
-	}
+//	// retrive the top three accomodations
+//	public function topThree() {
+//		return array($this->sleeps->get(0), $this->sleeps->get(1), $this->sleeps->get(2));
+//	}
 
     // retrieve the last accomodation
     public function last() {
