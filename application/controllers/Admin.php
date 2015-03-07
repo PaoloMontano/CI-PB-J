@@ -15,9 +15,9 @@ class Admin extends Application {
     {
         $this->data['title'] = "Manage Attractions";
         //$this->data['quotes'] = $this->quotes->all();
-        
+
 	$this->data['pagebody'] = 'admin';
         $this->render();
     }
-    
+
 }

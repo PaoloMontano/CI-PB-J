@@ -20,13 +20,13 @@
             <td>{value}</td>
             <td>{rating}</td>
             <td>
-                <a href="/adminsleeps/edit/{id}">Edit</a> | 
-                <a href="/adminsleeps/delete/{id}">Delete</a>
+                <a href="/AdminSleeps/edit/{id}">Edit</a> | 
+                <a href="/AdminSleeps/delete/{id}">Delete</a>
             </td>
         </tr>
         {/sleeps}
     </table>
 </div>
 <br/>
-<a href="/adminsleeps/add" role="button" class="btn btn-default">Add Sleep</a>
+<a href="/AdminSleeps/add" role="button" class="btn btn-default">Add Sleep</a>
 <a href="/admin" role="button" class="btn btn-default">Go Back</a>

@@ -2,7 +2,7 @@
     <div class="errors">
         {message}
     </div>
-    <form action="/admineats/confirm/{id}" method="post">
+    <form action="/AdminEats/confirm/{id}" method="post">
         {phoneId}
         {title}
         {image}
@@ -16,4 +16,4 @@
 </div>
 
 <br/>
-<a href="/admineats" role="button" class="btn btn-default">Go Back</a>
+<a href="/AdminEats" role="button" class="btn btn-default">Go Back</a>
