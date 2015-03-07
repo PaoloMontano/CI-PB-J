@@ -44,13 +44,13 @@ class AdminPlays extends Application {
         }
         $this->data['message'] = $message;
         
-        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $play->phoneId, "", 11, 11);
-        $this->data['title'] = makeTextField('Name', 'title', $play->title);
-        $this->data['image'] = makeTextField('Picture', 'image', $play->image);
-        $this->data['desc'] = makeTextArea('Description', 'desc', $play->desc);
-        $this->data['value'] = makeTextField('Value', 'value', $play->value);
-        $this->data['rating'] = makeTextField('Rating', 'rating', $play->rating);
-        $this->data['link'] = makeTextField('Link', 'link', $play->link);
+        $this->data['form_phoneId'] = makeTextField('Phone Number', 'phoneId', $play->phoneId, "", 11, 11);
+        $this->data['form_title'] = makeTextField('Name', 'title', $play->title);
+        $this->data['form_image'] = makeTextField('Picture', 'image', $play->image);
+        $this->data['form_desc'] = makeTextArea('Description', 'desc', $play->desc);
+        $this->data['form_value'] = makeTextField('Value', 'value', $play->value);
+        $this->data['form_rating'] = makeTextField('Rating', 'rating', $play->rating);
+        $this->data['form_link'] = makeTextField('Link', 'link', $play->link);
         
         $this->data['pagebody'] = 'edit_play';
         $this->data['submit'] = makeSubmitButton('Submit Play', "Click here to validate the attraction data", 'btn-success');
