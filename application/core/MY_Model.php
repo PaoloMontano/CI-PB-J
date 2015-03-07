@@ -276,7 +276,7 @@ class MY_Model_PBJ extends MY_Model
         $query = $this->db->get($this->_tableName);
         return $query->result();
     }
-    
+
     // Grab the lowest column value from the table
     function getLowest($column, $count)
     {

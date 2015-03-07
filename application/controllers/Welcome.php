@@ -13,15 +13,15 @@ class Welcome extends Application
     {
         $this->data['pagebody'] = 'homepage';
 
-        $this->data['top-eat'] = $this->eats->getHighest("rating", 1);
-        $this->data['eats'] = $this->eats->getHighest("rating", 3);
-        
-        $this->data['top-play'] = $this->plays->getHighest("rating", 1);
-        $this->data['plays'] = $this->plays->getHighest("rating", 3);
-        
-        $this->data['top-sleep'] = $this->sleeps->getHighest("rating", 1);
-        $this->data['sleeps'] = $this->sleeps->getHighest("rating", 3);
-        
+        $this->data['top-eat'] = $this->Eats->getHighest("rating", 1);
+        $this->data['eats'] = $this->Eats->getHighest("rating", 3);
+
+        $this->data['top-play'] = $this->Plays->getHighest("rating", 1);
+        $this->data['plays'] = $this->Plays->getHighest("rating", 3);
+
+        $this->data['top-sleep'] = $this->Sleeps->getHighest("rating", 1);
+        $this->data['sleeps'] = $this->Sleeps->getHighest("rating", 3);
+
 
             $this->render();
     }
