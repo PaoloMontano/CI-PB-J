@@ -8,7 +8,7 @@ class Play extends Application
     {
         $this->data['pagetitle'] = 'WIP - Play';
         $this->data['pagebody'] = 'play';
-        $this->data['plays'] = $this->plays->all();
+        $this->data['plays'] = $this->Plays->all();
         
         $this->render();
     }
