@@ -14,24 +14,24 @@ class AdminEats extends Application {
     function index()
     {
         $this->data['title'] = "Manage Eats";
-        
+
         $this->data['eats'] = $this->Eats->all();
-        
-	$this->data['pagebody'] = 'admin_eats';
+
+        $this->data['pagebody'] = 'admin_eats';
         $this->render();
     }
-    
+
     function add()
     {
         $eats = $this->Eats->create();
         $this->present($eats);
     }
-    
+
     function edit($id)
     {
         $this->present($this->Eats->get($id));
     }
-    
+
     // Present restaurant info for adding/editing
     function present($eat)
     {
@@ -43,15 +43,19 @@ class AdminEats extends Application {
                 $message .= $booboo . BR;
         }
         $this->data['message'] = $message;
-        
-        $this->data['phoneId'] = makeTextField('Phone Number', 'phoneId', $eat->phoneId, "", 11, 11);
-        $this->data['title'] = makeTextField('Name', 'title', $eat->title);
-        $this->data['image'] = makeTextField('Picture', 'image', $eat->image);
-        $this->data['desc'] = makeTextArea('Description', 'desc', $eat->desc);
-        $this->data['value'] = makeTextField('Value', 'value', $eat->value);
-        $this->data['rating'] = makeTextField('Rating', 'rating', $eat->rating);
-        $this->data['link'] = makeTextField('Link', 'link', $eat->link);
-        
+        $options = array(
+            'lowend' => '$',
+            'average' => '$$',
+            'highend' => '$$'
+        );
+        $this->data['form_phoneId'] = makeTextField('Phone Number', 'phoneId', $eat->phoneId, "", 11, 11);
+        $this->data['form_title'] = makeTextField('Name', 'title', $eat->title);
+        $this->data['form_image'] = makeTextField('Picture', 'image', $eat->image);
+        $this->data['form_desc'] = makeTextArea('Description', 'desc', $eat->desc);
+        $this->data['form_value'] = makeTextField('Value', 'value', $eat->value);
+        $this->data['form_rating'] = makeTextField('Rating', 'rating', $eat->rating);
+        $this->data['form_link'] = makeTextField('Link', 'link', $eat->link);
+
         $this->data['pagebody'] = 'edit_eat';
         $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the restaurant data", 'btn-success');
         if (!empty($eat->id))
