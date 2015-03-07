@@ -15,7 +15,7 @@ class AdminEats extends Application {
     {
         $this->data['title'] = "Manage Eats";
         
-        $this->data['eats'] = $this->eats->all();
+        $this->data['eats'] = $this->Eats->all();
         
 	$this->data['pagebody'] = 'admin_eats';
         $this->render();
@@ -23,13 +23,13 @@ class AdminEats extends Application {
     
     function add()
     {
-        $eats = $this->eats->create();
+        $eats = $this->Eats->create();
         $this->present($eats);
     }
     
     function edit($id)
     {
-        $this->present($this->eats->get($id));
+        $this->present($this->Eats->get($id));
     }
     
     // Present restaurant info for adding/editing
@@ -65,7 +65,7 @@ class AdminEats extends Application {
     // Validates and confirms the information placed into form
     function confirm($id)
     {
-        $record = $this->eats->create();
+        $record = $this->Eats->create();
         
         // Extract submitted fields
         $record->phoneId = $this->input->post('phoneId');
@@ -101,12 +101,12 @@ class AdminEats extends Application {
         // Save stuff
         if ($id == -1)
         {
-            $this->eats->add($record);
+            $this->Eats->add($record);
         }
         else
         {
             $record->id = $id;
-            $this->eats->update($record);
+            $this->Eats->update($record);
         }
         
         $this->index();
@@ -114,7 +114,7 @@ class AdminEats extends Application {
     
     function delete($id)
     {
-        $this->eats->delete($id);
+        $this->Eats->delete($id);
         $this->index();
     }
 

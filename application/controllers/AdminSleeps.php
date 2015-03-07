@@ -15,7 +15,7 @@ class AdminSleeps extends Application {
     {
         $this->data['title'] = "Manage Sleeps";
         
-        $this->data['sleeps'] = $this->sleeps->all();
+        $this->data['sleeps'] = $this->Sleeps->all();
         
 	$this->data['pagebody'] = 'admin_sleeps';
         $this->render();
@@ -23,13 +23,13 @@ class AdminSleeps extends Application {
     
     function add()
     {
-        $sleeps = $this->sleeps->create();
+        $sleeps = $this->Sleeps->create();
         $this->present($sleeps);
     }
     
     function edit($id)
     {
-        $this->present($this->sleeps->get($id));
+        $this->present($this->Sleeps->get($id));
     }
     
     // Present hotel info for adding/editing
@@ -65,7 +65,7 @@ class AdminSleeps extends Application {
     // Validates and confirms the information placed into form
     function confirm($id)
     {
-        $record = $this->sleeps->create();
+        $record = $this->Sleeps->create();
         
         // Extract submitted fields
         $record->phoneId = $this->input->post('phoneId');
@@ -101,12 +101,12 @@ class AdminSleeps extends Application {
         // Save stuff
         if ($id == -1)
         {
-            $this->sleeps->add($record);
+            $this->Sleeps->add($record);
         }
         else
         {
             $record->id = $id;
-            $this->sleeps->update($record);
+            $this->Sleeps->update($record);
         }
         
         $this->index();
@@ -114,7 +114,7 @@ class AdminSleeps extends Application {
     
     function delete($id)
     {
-        $this->sleeps->delete($id);
+        $this->Sleeps->delete($id);
         $this->index();
     }
 

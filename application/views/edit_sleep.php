@@ -2,7 +2,7 @@
     <div class="errors">
         {message}
     </div>
-    <form action="/adminsleeps/confirm/{id}" method="post">
+    <form action="/AdminSleeps/confirm/{id}" method="post">
         {phoneId}
         {title}
         {image}
@@ -16,4 +16,4 @@
 </div>
 
 <br/>
-<a href="/adminsleeps" role="button" class="btn btn-default">Go Back</a>
+<a href="/AdminSleeps" role="button" class="btn btn-default">Go Back</a>

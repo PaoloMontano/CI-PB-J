@@ -20,13 +20,13 @@
             <td>{value}</td>
             <td>{rating}</td>
             <td>
-                <a href="/admineats/edit/{id}">Edit</a> | 
-                <a href="/admineats/delete/{id}">Delete</a>
+                <a href="/AdminEats/edit/{id}">Edit</a> | 
+                <a href="/AdminEats/delete/{id}">Delete</a>
             </td>
         </tr>
         {/eats}
     </table>
 </div>
 <br/>
-<a href="/admineats/add" role="button" class="btn btn-default">Add Eat</a>
+<a href="/AdminEats/add" role="button" class="btn btn-default">Add Eat</a>
 <a href="/admin" role="button" class="btn btn-default">Go Back</a>

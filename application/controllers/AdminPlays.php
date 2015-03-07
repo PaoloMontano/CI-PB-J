@@ -15,7 +15,7 @@ class AdminPlays extends Application {
     {
         $this->data['title'] = "Manage Plays";
         
-        $this->data['plays'] = $this->plays->all();
+        $this->data['plays'] = $this->Plays->all();
         
 	$this->data['pagebody'] = 'admin_plays';
         $this->render();
@@ -23,13 +23,13 @@ class AdminPlays extends Application {
     
     function add()
     {
-        $plays = $this->plays->create();
+        $plays = $this->Plays->create();
         $this->present($plays);
     }
     
     function edit($id)
     {
-        $this->present($this->plays->get($id));
+        $this->present($this->Plays->get($id));
     }
     
     // Present attraction info for adding/editing
@@ -65,7 +65,7 @@ class AdminPlays extends Application {
     // Validates and confirms the information placed into form
     function confirm($id)
     {
-        $record = $this->plays->create();
+        $record = $this->Plays->create();
         
         // Extract submitted fields
         $record->phoneId = $this->input->post('phoneId');
@@ -101,12 +101,12 @@ class AdminPlays extends Application {
         // Save stuff
         if ($id == -1)
         {
-            $this->plays->add($record);
+            $this->Plays->add($record);
         }
         else
         {
             $record->id = $id;
-            $this->plays->update($record);
+            $this->Plays->update($record);
         }
         
         $this->index();
@@ -114,7 +114,7 @@ class AdminPlays extends Application {
     
     function delete($id)
     {
-        $this->plays->delete($id);
+        $this->Plays->delete($id);
         $this->index();
     }
 
