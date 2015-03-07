@@ -43,11 +43,6 @@ class AdminEats extends Application {
                 $message .= $booboo . BR;
         }
         $this->data['message'] = $message;
-        $options = array(
-            'lowend' => '$',
-            'average' => '$$',
-            'highend' => '$$'
-        );
         $this->data['form_phoneId'] = makeTextField('Phone Number', 'phoneId', $eat->phoneId, "", 11, 11);
         $this->data['form_title'] = makeTextField('Name', 'title', $eat->title);
         $this->data['form_image'] = makeTextField('Picture', 'image', $eat->image);
