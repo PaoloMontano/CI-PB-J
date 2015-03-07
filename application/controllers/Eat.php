@@ -8,7 +8,7 @@ class Eat extends Application
     {
         $this->data['pagetitle'] = 'WIP - Eat';
         $this->data['pagebody'] = 'eat';
-        $this->data['eats'] = $this->eats->all();
+        $this->data['eats'] = $this->Eats->all();
         
         $this->render();
     }
