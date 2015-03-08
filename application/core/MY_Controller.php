@@ -37,7 +37,8 @@ class Application extends CI_Controller {
                 array('name' => 'Home', 'link' => '/'),
                 array('name' => 'Eat', 'link' => '/eat'),
                 array('name' => 'Play', 'link' => '/play'),
-                array('name' => 'Sleep', 'link' => '/sleep')
+                array('name' => 'Sleep', 'link' => '/sleep'),
+                array('name' => 'Manage', 'link' => '/admin')
             )
         );
 

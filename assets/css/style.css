@@ -6,8 +6,29 @@
     width: 250px;
 }
 
+.results-image img {
+    width: 200px !important;
+}
+
+.results tr {
+    height: 150px !important;
+}
+
+.manage img {
+    width: 50px !important;
+    height: 50px !important;
+}
+
+#manage a {
+    display: block;
+}
+
 .container {
     max-width: 960px
+}
+
+div.inline {
+    float: left;
 }
 
 #page-header {
@@ -27,8 +48,8 @@
     background: #5bfff0;
 }
 
-td {
-	padding: 10px;
+td, th {
+    padding: 10px;
 }
 
 /* Sticky footer styles
@@ -39,7 +60,7 @@ html {
 }
 body {
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 .footer {
     position: absolute;
@@ -52,4 +73,13 @@ body {
 
 .container .text-muted {
     margin: 20px 0;
+}
+
+.errors {
+    color: red;
+}
+
+.view-image {
+    width: 250px !important;
+    height: 250px !important;
 }
