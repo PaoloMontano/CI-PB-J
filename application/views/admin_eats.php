@@ -21,12 +21,15 @@
             <td>{rating}</td>
             <td>
                 <a href="/AdminEats/edit/{id}">Edit</a> | 
+                <a href="/Eat/view/{id}">View</a> | 
                 <a href="/AdminEats/delete/{id}">Delete</a>
             </td>
         </tr>
         {/eats}
     </table>
+    <br/>
+    <a href="/AdminEats/add" role="button" class="btn btn-default">Add Eat</a>
+    <a href="/admin" role="button" class="btn btn-default">Go Back</a>
+    <br/>
+    <br/>
 </div>
-<br/>
-<a href="/AdminEats/add" role="button" class="btn btn-default">Add Eat</a>
-<a href="/admin" role="button" class="btn btn-default">Go Back</a>

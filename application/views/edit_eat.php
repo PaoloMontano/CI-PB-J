@@ -11,9 +11,8 @@
         {form_rating}
         {form_link}
         <br/>
+        <a href="../" role="button" class="btn btn-default">Cancel</a>
         {submit}
     </form>
+    <br/>
 </div>
-
-<br/>
-<a href="/AdminEats" role="button" class="btn btn-default">Go Back</a>

@@ -11,22 +11,25 @@
         </tr>
         {plays}
         <tr>
-            <td>{form_id}</td>
-            <td>{form_phoneId}</td>
-            <td>{form_title}</td>
+            <td>{id}</td>
+            <td>{phoneId}</td>
+            <td>{title}</td>
             <td>
-                <img src="/assets/images/{form_image}" alt="pic">
+                <img src="/assets/images/{image}" alt="pic">
             </td>
-            <td>{form_value}</td>
-            <td>{form_rating}</td>
+            <td>{value}</td>
+            <td>{rating}</td>
             <td>
                 <a href="/AdminPlays/edit/{id}">Edit</a> | 
+                <a href="/Eat/view/{id}">View</a> | 
                 <a href="/AdminPlays/delete/{id}">Delete</a>
             </td>
         </tr>
         {/plays}
     </table>
+    <br/>
+    <a href="/AdminPlays/add" role="button" class="btn btn-default">Add Play</a>
+    <a href="/admin" role="button" class="btn btn-default">Go Back</a>
+    <br/>
+    <br/>
 </div>
-<br/>
-<a href="/AdminPlays/add" role="button" class="btn btn-default">Add Play</a>
-<a href="/admin" role="button" class="btn btn-default">Go Back</a>

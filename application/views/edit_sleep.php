@@ -3,17 +3,17 @@
         {message}
     </div>
     <form action="/AdminSleeps/confirm/{id}" method="post">
-        {phoneId}
-        {title}
-        {image}
-        {desc}
-        {value}
-        {rating}
-        {link}
+        {form_phoneId}
+        {form_title}
+        {form_image}
+        {form_desc}
+        {form_value}
+        {form_rating}
+        {form_link}
         <br/>
+        <br/>
+        <a href="../" role="button" class="btn btn-default">Cancel</a>
         {submit}
     </form>
+    <br/>
 </div>
-
-<br/>
-<a href="/AdminSleeps" role="button" class="btn btn-default">Go Back</a>

@@ -11,22 +11,25 @@
         </tr>
         {sleeps}
         <tr>
-            <td>{form_id}</td>
-            <td>{form_phoneId}</td>
-            <td>{form_title}</td>
+            <td>{id}</td>
+            <td>{phoneId}</td>
+            <td>{title}</td>
             <td>
-                <img src="/assets/images/{form_image}" alt="pic">
+                <img src="/assets/images/{image}" alt="pic">
             </td>
-            <td>{form_value}</td>
-            <td>{form_rating}</td>
+            <td>{value}</td>
+            <td>{rating}</td>
             <td>
                 <a href="/AdminSleeps/edit/{id}">Edit</a> | 
+                <a href="/Eat/view/{id}">View</a> | 
                 <a href="/AdminSleeps/delete/{id}">Delete</a>
             </td>
         </tr>
         {/sleeps}
     </table>
+    <br/>
+    <a href="/AdminSleeps/add" role="button" class="btn btn-default">Add Sleep</a>
+    <a href="/admin" role="button" class="btn btn-default">Go Back</a>
+    <br/>
+    <br/>
 </div>
-<br/>
-<a href="/AdminSleeps/add" role="button" class="btn btn-default">Add Sleep</a>
-<a href="/admin" role="button" class="btn btn-default">Go Back</a>
