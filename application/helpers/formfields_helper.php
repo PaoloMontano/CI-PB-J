@@ -138,6 +138,20 @@ if (!function_exists('makeTextArea')) {
 
 }
 
+if (!function_exists('makeFileUpload')) {
+
+    function makeFileUpload($label, $name, $explain = "") {
+        $CI = &get_instance();
+        $parms = array(
+            'label' => $label,
+            'name' => $name,
+            'explain' => $explain,
+        );
+        return $CI->parser->parse('_fields/fileupload', $parms, true);
+    }
+
+}
+
 /**
  * Construct an HTML snippet to present an image.
  * 
