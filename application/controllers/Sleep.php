@@ -9,12 +9,14 @@ class Sleep extends Application
         $this->data['pagetitle'] = 'WIP - Sleep';
         $this->data['pagebody'] = 'sleep';
         $this->data['sleeps'] = $this->Sleeps->all();
+        
+        // Strip tags and limit characters to be 200 for description.
         foreach($this->data['sleeps'] as $sleep)
         {
             $sleep->desc = strip_tags($sleep->desc);
             
             if (strlen($sleep->desc) > 200)
-                $sleep->desc = substr ($sleep->desc, 0, 199) . "... ";
+                $sleep->desc = substr ($sleep->desc, 0, 199) . "...";
         }
         
         $this->render();

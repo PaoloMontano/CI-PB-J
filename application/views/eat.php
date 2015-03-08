@@ -23,7 +23,7 @@
             <tr>
                 <td class="results-image"><img src="/assets/images/{image}" alt="pic" width="100" height="100"></td>
                 <td class="results-description">
-                    <h4>{title}</h4>{desc}<a href="/Eat/view/{id}">Learn more.</a>
+                    <h4>{title}</h4>{desc}<a href="/Eat/view/{id}"> Learn more.</a>
                 </td>
                 <td class="results-rating">
                     Rating: <img src="/assets/images/stars.png" alt="stars" width="100px"/>

@@ -9,12 +9,14 @@ class Play extends Application
         $this->data['pagetitle'] = 'WIP - Play';
         $this->data['pagebody'] = 'play';
         $this->data['plays'] = $this->Plays->all();
+        
+        // Strip tags and limit characters to be 200 for description.
         foreach($this->data['plays'] as $play)
         {
             $play->desc = strip_tags($play->desc);
             
             if (strlen($play->desc) > 200)
-                $play->desc = substr ($play->desc, 0, 199) . "... ";
+                $play->desc = substr ($play->desc, 0, 199) . "...";
         }
         
         $this->render();
