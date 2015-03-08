@@ -2,7 +2,7 @@
     <div class="errors">
         {message}
     </div>
-    <form action="/AdminEats/confirm/{id}" method="post">
+    <form action="/AdminEats/confirm/{id}" method="post" enctype="multipart/form-data">
         {form_phoneId}
         {form_title}
         {form_image}

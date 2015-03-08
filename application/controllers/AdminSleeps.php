@@ -6,6 +6,7 @@ class AdminSleeps extends Application {
     {
 	parent::__construct();
         $this->load->helper('formfields');
+        $this->load->library('upload');
     }
 
     //-------------------------------------------------------------
@@ -42,11 +43,20 @@ class AdminSleeps extends Application {
             foreach ($this->errors as $booboo)
                 $message .= $booboo . BR;
         }
+        $config['upload_path'] = './assets/images/eat/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = '200';
+        $config['max_width'] = '1024';
+        $config['max_height'] = '768';
+        $config['overwrite'] = TRUE;
+        $this->upload->initialize($config);
+
         $this->data['message'] = $message;
         
         $this->data['form_phoneId'] = makeTextField('Phone Number', 'phoneId', $sleep->phoneId, "", 11, 11);
         $this->data['form_title'] = makeTextField('Name', 'title', $sleep->title);
-        $this->data['form_image'] = makeTextField('Picture', 'image', $sleep->image);
+        // $this->data['form_image'] = makeTextField('Picture', 'image', $sleep->image);
+        $this->data['form_image'] = makeFileUpload('Picture', 'image', $eat->image);
         $this->data['form_desc'] = makeTextArea('Description', 'desc', $sleep->desc);
         $this->data['form_value'] = makeTextField('Value', 'value', $sleep->value);
         $this->data['form_rating'] = makeTextField('Rating', 'rating', $sleep->rating);
@@ -89,7 +99,9 @@ class AdminSleeps extends Application {
             $this->errors[] = "The value can only be a number from 1-5";
         if (!empty($record->rating) && (!is_numeric($record->rating) || $record->rating < 1 || $record->rating > 5))
             $this->errors[] = "The rating can only be a number from 1-5";
-        
+        if (is_null($record->image)) {
+            $record->image = "";
+        }
         // Redissleep if any errors
         if (count($this->errors) > 0)
         {
