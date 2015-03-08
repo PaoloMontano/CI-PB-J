@@ -10,14 +10,7 @@ class Sleep extends Application
         $this->data['pagebody'] = 'sleep';
         $this->data['sleeps'] = $this->Sleeps->all();
         
-        // Strip tags and limit characters to be 200 for description.
-        foreach($this->data['sleeps'] as $sleep)
-        {
-            $sleep->desc = strip_tags($sleep->desc);
-            
-            if (strlen($sleep->desc) > 200)
-                $sleep->desc = substr ($sleep->desc, 0, 199) . "...";
-        }
+        $this->filterDescription();
         
         $this->render();
     }
@@ -38,5 +31,62 @@ class Sleep extends Application
         
         $this->render();
     }
+    
+    public function sortHValue()
+    {
+        $this->data['pagetitle'] = 'WIP - Sleep';
+        $this->data['pagebody'] = 'sleep';
+        $this->data['sleeps'] = $this->Sleeps->getHighest("value", 0);
+        
+        $this->filterDescription();
+        
+        $this->render();
+    }
+    
+    public function sortHRating()
+    {
+        $this->data['pagetitle'] = 'WIP - Sleep';
+        $this->data['pagebody'] = 'sleep';
+        $this->data['sleeps'] = $this->Sleeps->getHighest("rating", 0);
+        
+        $this->filterDescription();
+        
+        $this->render();
+    }
+        public function sortLValue()
+    {
+        $this->data['pagetitle'] = 'WIP - Sleep';
+        $this->data['pagebody'] = 'sleep';
+        $this->data['sleeps'] = $this->Sleeps->getLowest("value", 0);
+        
+        $this->filterDescription();
+        
+        $this->render();
+    }
+    
+    public function sortLRating()
+    {
+        $this->data['pagetitle'] = 'WIP - Sleep';
+        $this->data['pagebody'] = 'sleep';
+        $this->data['sleeps'] = $this->Sleeps->getLowest("rating", 0);
+        
+        $this->filterDescription();
+        
+        $this->render();
+    }
+    
+    // Strip tags and limit characters to be 200 for description.
+    public function filterDescription()
+    {
+        foreach($this->data['sleeps'] as $sleep)
+        {
+            $sleep->desc = strip_tags($sleep->desc);
+            
+            if (strlen($sleep->desc) > 200)
+                $sleep->desc = substr ($sleep->desc, 0, 199) . "...";
+        }
+        
+    }
+
 
 }

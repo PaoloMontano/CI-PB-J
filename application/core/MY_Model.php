@@ -272,8 +272,10 @@ class MY_Model_PBJ extends MY_Model
     function getHighest($column, $count)
     {
         $this->db->order_by($column, 'desc');
-        $this->db->limit($count);
+        if ($count > 0)
+            $this->db->limit($count);
         $query = $this->db->get($this->_tableName);
+        
         return $query->result();
     }
 
@@ -281,8 +283,10 @@ class MY_Model_PBJ extends MY_Model
     function getLowest($column, $count)
     {
         $this->db->order_by($column, 'asc');
-        $this->db->limit($count);
+        if ($count > 0)
+            $this->db->limit($count);
         $query = $this->db->get($this->_tableName);
+        
         return $query->result();
     }
 
