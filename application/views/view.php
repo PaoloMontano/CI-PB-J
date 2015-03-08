@@ -17,7 +17,7 @@
     </div>
     
     <br/>
-    <a href="../" role="button" class="btn btn-default">Go Back</a>
+    <a onclick="goBack()" role="button" class="btn btn-default back">Go Back</a>
     <a href="{link}" role="button" class="btn btn-success">Visit</a>
     <br/>
     <br/>
