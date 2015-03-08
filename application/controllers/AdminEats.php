@@ -6,6 +6,7 @@ class AdminEats extends Application {
     {
 	parent::__construct();
         $this->load->helper('formfields');
+        $this->load->library('upload');
     }
 
     //-------------------------------------------------------------
@@ -42,15 +43,24 @@ class AdminEats extends Application {
             foreach ($this->errors as $booboo)
                 $message .= $booboo . BR;
         }
+
+        $config['upload_path'] = '/assets/images/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = '200';
+        $config['max_width'] = '1024';
+        $config['max_height'] = '768';
+        $config['overwrite'] = TRUE;
+        $this->upload->initialize($config);
+
         $this->data['message'] = $message;
         $this->data['form_phoneId'] = makeTextField('Phone Number', 'phoneId', $eat->phoneId, "", 11, 11);
         $this->data['form_title'] = makeTextField('Name', 'title', $eat->title);
-        $this->data['form_image'] = makeTextField('Picture', 'image', $eat->image);
+        // $this->data['form_image'] = makeTextField('Picture', 'image', $eat->image);
+        $this->data['form_image'] = makeFileUpload('Pciture', 'image', $eat->image);
         $this->data['form_desc'] = makeTextArea('Description', 'desc', $eat->desc);
         $this->data['form_value'] = makeTextField('Value', 'value', $eat->value);
-        $this->data['form_rating'] = makeTextField('Rating', 'rating', $eat->rating);
         $this->data['form_link'] = makeTextField('Link', 'link', $eat->link);
-
+        $this->data['form_rating'] = makeTextField('Rating', 'rating', $eat->rating);
         $this->data['pagebody'] = 'edit_eat';
         $this->data['submit'] = makeSubmitButton('Submit Eat', "Click here to validate the restaurant data", 'btn-success');
         if (!empty($eat->id))
@@ -69,7 +79,8 @@ class AdminEats extends Application {
         // Extract submitted fields
         $record->phoneId = $this->input->post('phoneId');
         $record->title = $this->input->post('title');
-        $record->image = $this->input->post('image');
+        // $record->image = $this->input->post('image');
+        error_log($this->input->post('image'));
         $record->desc = $this->input->post('desc');
         $record->value = $this->input->post('value');
         $record->rating = $this->input->post('rating');

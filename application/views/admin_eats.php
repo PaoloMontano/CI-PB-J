@@ -29,4 +29,4 @@
 </div>
 <br/>
 <a href="/AdminEats/add" role="button" class="btn btn-default">Add Eat</a>
-<a href="/admin" role="button" class="btn btn-default">Go Back</a>
+<a href="/Admin" role="button" class="btn btn-default">Go Back</a>
