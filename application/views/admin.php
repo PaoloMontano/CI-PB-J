@@ -10,7 +10,8 @@
             <td><a href="/AdminSleeps">Manage Sleeps</a></td>
         </tr>
     </table>
+    <br/>
+    <a href="/welcome" role="button" class="btn btn-default">Go Back</a>
+    <br/>
+    <br/>
 </div>
-
-<br/>
-<a href="/welcome" role="button" class="btn btn-default">Go Back</a>

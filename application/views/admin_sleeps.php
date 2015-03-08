@@ -26,7 +26,9 @@
         </tr>
         {/sleeps}
     </table>
+    <br/>
+    <a href="/AdminSleeps/add" role="button" class="btn btn-default">Add Sleep</a>
+    <a href="/admin" role="button" class="btn btn-default">Go Back</a>
+    <br/>
+    <br/>
 </div>
-<br/>
-<a href="/AdminSleeps/add" role="button" class="btn btn-default">Add Sleep</a>
-<a href="/admin" role="button" class="btn btn-default">Go Back</a>

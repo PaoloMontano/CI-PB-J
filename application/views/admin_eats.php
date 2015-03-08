@@ -26,7 +26,9 @@
         </tr>
         {/eats}
     </table>
+    <br/>
+    <a href="/AdminEats/add" role="button" class="btn btn-default">Add Eat</a>
+    <a href="/admin" role="button" class="btn btn-default">Go Back</a>
+    <br/>
+    <br/>
 </div>
-<br/>
-<a href="/AdminEats/add" role="button" class="btn btn-default">Add Eat</a>
-<a href="/admin" role="button" class="btn btn-default">Go Back</a>

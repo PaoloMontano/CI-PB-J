@@ -31,4 +31,5 @@
             <a href="/sleep" role="button" class="btn btn-default">View All</a>
         </div>
     </div>
+    <br/>
 </div>
