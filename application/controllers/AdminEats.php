@@ -55,7 +55,7 @@ class AdminEats extends Application {
         $this->data['form_phoneId'] = makeTextField('Phone Number', 'phoneId', $eat->phoneId, "", 11, 11);
         $this->data['form_title'] = makeTextField('Name', 'title', $eat->title);
         // $this->data['form_image'] = makeTextField('Picture', 'image', $eat->image);
-        $this->data['form_image'] = makeFileUpload('Pciture', 'image', $eat->image);
+        $this->data['form_image'] = makeFileUpload('Picture', 'image', $eat->image);
         $this->data['form_desc'] = makeTextArea('Description', 'desc', $eat->desc);
         $this->data['form_value'] = makeTextField('Value', 'value', $eat->value);
         $this->data['form_link'] = makeTextField('Link', 'link', $eat->link);
