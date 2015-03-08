@@ -26,7 +26,7 @@ if (!defined('APPPATH'))
  */
 if (!function_exists('makeTextField')) {
 
-    function makeTextField($label, $name, $value, $explain = "", $maxlen = 40, $size = 25, $disabled = false) {
+    function makeTextField($label, $name, $value, $explain = "", $maxlen = 64, $size = 25, $disabled = false) {
         $CI = &get_instance();
         $parms = array(
             'label' => $label,
@@ -56,7 +56,7 @@ if (!function_exists('makeTextField')) {
  */
 if (!function_exists('makeComboField')) {
 
-    function makeComboField($label, $name, $value, $options, $explain = "", $maxlen = 40, $size = 25, $disabled = false) {
+    function makeComboField($label, $name, $value, $options, $explain = "", $maxlen = 100, $size = 25, $disabled = false) {
         $CI = &get_instance();
         $parms = array(
             'label' => $label,
@@ -118,7 +118,7 @@ if (!function_exists('makeSubmitButton')) {
  */
 if (!function_exists('makeTextArea')) {
 
-    function makeTextArea($label, $name, $value, $explain = "", $maxlen = 500, $size = 25, $rows = 5, $disabled = false) {
+    function makeTextArea($label, $name, $value, $explain = "", $maxlen = 2096, $size = 25, $rows = 5, $disabled = false) {
         $height = (int) (strlen($value) / 80) + 1;
         if ($rows < $height)
             $rows = $height;
