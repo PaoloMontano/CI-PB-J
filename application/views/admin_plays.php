@@ -11,14 +11,14 @@
         </tr>
         {plays}
         <tr>
-            <td>{form_id}</td>
-            <td>{form_phoneId}</td>
-            <td>{form_title}</td>
+            <td>{id}</td>
+            <td>{phoneId}</td>
+            <td>{title}</td>
             <td>
-                <img src="/assets/images/{form_image}" alt="pic">
+                <img src="/assets/images/{image}" alt="pic">
             </td>
-            <td>{form_value}</td>
-            <td>{form_rating}</td>
+            <td>{value}</td>
+            <td>{rating}</td>
             <td>
                 <a href="/AdminPlays/edit/{id}">Edit</a> | 
                 <a href="/AdminPlays/delete/{id}">Delete</a>
