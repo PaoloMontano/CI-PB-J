@@ -1,7 +1,7 @@
 <div class="container" id="content">
     
     <h1>{title}</h1>
-    <a style="padding-left: 10px;" href="{link}">{link}</a>
+    <a style="padding-left: 10px;" href="{link}" target="_blank">{link}</a>
     <br/><br/>
     
     <div class="row">

@@ -21,7 +21,7 @@
             <td>{rating}</td>
             <td>
                 <a href="/AdminPlays/edit/{id}">Edit</a> | 
-                <a href="/Eat/view/{id}">View</a> | 
+                <a href="/Play/view/{id}">View</a> | 
                 <a href="/AdminPlays/delete/{id}">Delete</a>
             </td>
         </tr>
