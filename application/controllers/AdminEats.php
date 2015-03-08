@@ -43,8 +43,7 @@ class AdminEats extends Application {
             foreach ($this->errors as $booboo)
                 $message .= $booboo . BR;
         }
-
-        $config['upload_path'] = '/assets/images/';
+        $config['upload_path'] = './assets/images/eat/';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size'] = '200';
         $config['max_width'] = '1024';
@@ -79,8 +78,7 @@ class AdminEats extends Application {
         // Extract submitted fields
         $record->phoneId = $this->input->post('phoneId');
         $record->title = $this->input->post('title');
-        // $record->image = $this->input->post('image');
-        error_log($this->input->post('image'));
+        $record->image = $this->input->post('image');
         $record->desc = $this->input->post('desc');
         $record->value = $this->input->post('value');
         $record->rating = $this->input->post('rating');
@@ -99,7 +97,9 @@ class AdminEats extends Application {
             $this->errors[] = "The value can only be a number from 1-5";
         if (!empty($record->rating) && (!is_numeric($record->rating) || $record->rating < 1 || $record->rating > 5))
             $this->errors[] = "The rating can only be a number from 1-5";
-        
+        if (is_null($record->image)) {
+            $record->image = "";
+        }
         // Redisplay if any errors
         if (count($this->errors) > 0)
         {
